@@ -1,2 +1,9 @@
-<mm-header></mm-header>
-<mm-movie-poster  *ngFor="let movie of movies" [movie] = "movie"></mm-movie-poster>  
+
+<section class="container-fluid column app-container">
+    <main class="center-xs">
+        <section class="overlay" [class.overlay--shown]="selectedMovie"  (click)="selectedMovie=null"></section>
+        <section class="row pt-50 col-xs-12 start-xs row--no-margin movie-card-holder">
+            <mm-movie-poster  *ngFor="let movie of movies" class="col-xs-2 mb-20" [movie] = "movie"></mm-movie-poster>
+        </section>  
+    </main>
+</section>
