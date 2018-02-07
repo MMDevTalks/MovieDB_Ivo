@@ -8,4 +8,8 @@ import { MOVIES } from './mock';
 })
 export class AppComponent {
   movies = MOVIES;
+  selectMovie(movie) {
+    alert(movie.id + 'was selected!');
+  }
 }
+

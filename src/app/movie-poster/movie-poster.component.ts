@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'mm-movie-poster',
@@ -8,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class MoviePosterComponent implements OnInit {
   @Input() movie: any = {};
+  @Output() selectMovie: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+  clickMoviePoster($event, movie) {
+    this.selectMovie.emit(movie);
   }
 
 }
